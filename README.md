@@ -20,7 +20,7 @@ Add the Nuget package `SpawnDev.BlazorJS.IndexRouting` to your project using you
 
 #### Use IndexRouter
 Replace `<Router>` with `<IndexRouter>` in `App.razor`
-```cs
+```razor
 @using SpawnDev.BlazorJS.IndexRouting.Routing
 
 <IndexRouter AppAssembly="@typeof(App).Assembly">
@@ -39,7 +39,7 @@ Replace `<Router>` with `<IndexRouter>` in `App.razor`
 
 #### Update NavLinks
 Change `<NavLink>` `href` values to use `index.html?$=[PAGE_ROUTE]` format in `NavMenu.razor`
-```cs
+```razor
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
