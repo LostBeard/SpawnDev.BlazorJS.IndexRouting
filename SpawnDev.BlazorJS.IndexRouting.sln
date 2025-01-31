@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35723.152 d17.13
+VisualStudioVersion = 17.13.35723.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnDev.BlazorJS.IndexRouting", "SpawnDev.BlazorJS.IndexRouting\SpawnDev.BlazorJS.IndexRouting.csproj", "{8CC4F852-4D8E-22BB-060F-3FFBC82006A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnDev.BlazorJS.IndexRouting.Demo", "SpawnDev.BlazorJS.IndexRouting.Demo\SpawnDev.BlazorJS.IndexRouting.Demo.csproj", "{08BC9977-4088-43F9-BB30-54415D759441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8CC4F852-4D8E-22BB-060F-3FFBC82006A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CC4F852-4D8E-22BB-060F-3FFBC82006A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CC4F852-4D8E-22BB-060F-3FFBC82006A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BC9977-4088-43F9-BB30-54415D759441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BC9977-4088-43F9-BB30-54415D759441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BC9977-4088-43F9-BB30-54415D759441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BC9977-4088-43F9-BB30-54415D759441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

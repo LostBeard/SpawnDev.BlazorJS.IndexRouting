@@ -9,6 +9,11 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing;
 /// </summary>
 public sealed class NavigationContext
 {
+    /// <summary>
+    /// Initializes a new instance of <see cref="NavigationContext"/>.
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="cancellationToken"></param>
     public NavigationContext(string path, CancellationToken cancellationToken)
     {
         Path = path;

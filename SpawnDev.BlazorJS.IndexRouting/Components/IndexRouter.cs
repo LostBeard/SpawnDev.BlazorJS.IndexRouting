@@ -9,7 +9,7 @@ using System.Web;
 namespace SpawnDev.BlazorJS.IndexRouting.Routing
 {
     /// <summary>
-    /// Routes all pages to index.html?
+    /// Routes all pages to index.html?$={route} and then routes to the appropriate component
     /// </summary>
     public partial class IndexRouter : IComponent, IHandleAfterRender, IDisposable
     {
@@ -99,12 +99,6 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing
             NavigationManager.LocationChanged += OnLocationChanged;
 
             VerifyIndexPage();
-
-            // <<<====================== THIS IS A CHANGE ========================>>>
-            //if (HotReloadManager.Default.MetadataUpdateSupported)
-            //{
-            //    HotReloadManager.Default.OnDeltaApplied += ClearRouteCaches;
-            //}
         }
 
         /// <inheritdoc />
@@ -145,12 +139,6 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing
         public void Dispose()
         {
             NavigationManager.LocationChanged -= OnLocationChanged;
-
-            // <<<====================== THIS IS A CHANGE ========================>>>
-            //if (HotReloadManager.Default.MetadataUpdateSupported)
-            //{
-            //    HotReloadManager.Default.OnDeltaApplied -= ClearRouteCaches;
-            //}
         }
 
         private static string StringUntilAny(string str, char[] chars)
@@ -172,6 +160,9 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing
             }
         }
 
+        /// <summary>
+        /// Typically called when hot reload is triggered to clear the route caches so changes are picked up.
+        /// </summary>
         private void ClearRouteCaches()
         {
             RouteTableFactory.ClearCaches();
@@ -283,6 +274,9 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing
                 _renderHandle.Render(builder => ExceptionDispatchInfo.Throw(e));
             }
         }
+        /// <summary>
+        /// If true, navigation to any page except index.html will be redirected to index.html with the route as a query parameter
+        /// </summary>
         [Parameter]
         public bool IndexLock { get; set; } = true;
         bool VerifyIndexPage()
@@ -311,7 +305,6 @@ namespace SpawnDev.BlazorJS.IndexRouting.Routing
         /// </summary>
         /// <param name="navigationManager"></param>
         /// <param name="location"></param>
-        /// <param name="routeQueryParameterName"></param>
         /// <returns></returns>
         public static string? MakeIndexUrl(NavigationManager navigationManager, string location)
         {

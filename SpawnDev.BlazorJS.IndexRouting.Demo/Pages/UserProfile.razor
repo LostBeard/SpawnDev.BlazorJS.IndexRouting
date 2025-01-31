@@ -1,0 +1,18 @@
+﻿@page "/user/{UserId:int}/profile"
+
+<PageTitle>User Profile</PageTitle>
+
+<h1>User Profile</h1>
+
+<p>This is used to demonstrate an route with a query parameter.</p>
+
+<div>UserId: @UserId</div>
+<div>Style: @Style</div>
+
+@code {
+    [Parameter]
+    public int UserId { get; set; }
+
+    [SupplyParameterFromQuery]
+    public string? Style { get; set; }
+}
